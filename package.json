@@ -1,0 +1,42 @@
+{
+  "name": "hive_backend",
+  "version": "1.0.0",
+  "description": "Official backend for the WINGO Mobile app. Developed by team Hive.",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf build && mkdir build && cp package.json ./build && npm run compile",
+    "compile": "cd ./node_modules/typescript/bin/ && tsc -p ../../../src/tsconfig.json",
+    "start": "cd ./build && node index.js",
+    "dev-w": "set NODE_ENV=development&& node ./node_modules/nodemon/bin/nodemon -e ts --exec \"npm run build && npm start\"",
+    "prod-w": "set NODE_ENV=production&& node ./node_modules/nodemon/bin/nodemon -e ts --exec \"npm run build && npm start\"",
+    "dev-m": "NODE_ENV=development node ./node_modules/nodemon/bin/nodemon -e ts --exec \"npm run build && npm start\"",
+    "prod-m": "NODE_ENV=production node ./node_modules/nodemon/bin/nodemon -e ts --exec \"npm run build && npm start\"",
+    "documentation": "node ./node_modules/typedoc/bin/typedoc --out ./documentation/ ./src --module commonjs --target ES5",
+    "clearLogs": "rm logs/* -rf"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@git.swisscom.com:7999/~taascca9/hive_backend.git"
+  },
+  "author": "Carlo Schmid, GHR-OSA-NEX-31",
+  "license": "ISC",
+  "dependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/neo4j": "^2.0.2",
+    "@types/node": "^12.7.8",
+    "axios": "^0.19.0",
+    "dotenv": "^8.1.0",
+    "global-cache": "^1.2.1",
+    "js-sha256": "^0.9.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "node-cron": "^2.0.3",
+    "nodemon": "^1.19.4",
+    "reflect-metadata": "^0.1.13",
+    "simple-node-logger": "^18.12.23",
+    "socket.io": "^2.3.0",
+    "typedoc": "^0.16.2",
+    "typeorm": "^0.2.22",
+    "typescript": "^3.6.4"
+  }
+}

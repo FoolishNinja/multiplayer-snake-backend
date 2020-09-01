@@ -1,0 +1,16 @@
+{
+    "type": "mysql",
+    "host": "localhost",
+    "port": 3307,
+    "username": "root",
+    "password": "toor",
+    "database": "multiplayer_snake",
+    "synchronize": true,
+    "logging": false,
+    "entities": [
+       "entities/*.js"
+    ],
+    "cli": {
+       "entitiesDir": "entities"
+    }
+ }
